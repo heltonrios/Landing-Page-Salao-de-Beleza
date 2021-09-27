@@ -1,19 +1,22 @@
 /*====  RESET ============================ */
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-a{
+ul {
+  list-style: none;
+}
+
+a {
   text-decoration: none;
 }
 
-img{
+img {
   width: 100%;
   height: auto;
 }
-
 
 /*====  VARIABLES ============================ */
 :root {
@@ -32,50 +35,50 @@ img{
 }
 
 /*====  BASE ============================ */
-body{
-  font: 400 1rem "DM Sans", sans-serif; 
+body {
+  font: 400 1rem 'DM Sans', sans-serif;
   color: var(--text-color);
   background-color: var(--body-color);
   -webkit-font-smoothing: antialiased;
 }
 
-h1 {
-  font: 700 1.875rem "Poppins", sans-serif;
+.tittle {
+  font: 700 1.875rem 'Poppins', sans-serif;
   color: var(--title-color);
   -webkit-font-smoothing: antialiased;
 }
 
-.button{
+.button {
   background-color: var(--base-color);
   color: var(--text-color-light);
   height: 3.5rem;
   display: inline-flex;
   align-items: center;
   padding: 0.2rem;
-  border-radius: .25rem;
-  font: 500 1rem "DM Sans", sans-serif;
+  border-radius: 0.25rem;
+  font: 500 1rem 'DM Sans', sans-serif;
   transition: background 0.3s;
 }
 
-.button:hover{
+.button:hover {
   background-color: var(--base-color-alt);
 }
 
-.divider-1{
+.divider-1 {
   height: 2px;
   background: linear-gradient(
     270deg,
-    hsla(var(--hue), 36%, 57%, 1) 0%, 
+    hsla(var(--hue), 36%, 57%, 1) 0%,
     hsla(var(--hue), 65%, 88%, 0.34)
-    );
+  );
 }
 
-.container{
+.container {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
 
-.grid{
+.grid {
   display: grid;
   gap: 2rem;
 }
@@ -84,7 +87,7 @@ h1 {
   padding: 5rem 0;
 }
 
-#header{
+#header {
   border-bottom: 1px solid #e4e4e4;
   margin-bottom: 2rem;
   display: flex;
@@ -93,19 +96,17 @@ h1 {
   top: 0;
   left: 0;
   z-index: 100;
-  background-color: var(--body-color)
+  background-color: var(--body-color);
 }
 
-nav{
-  height: var(--header-height);
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
+main {
+  margin-top: calc(var(--header-height) + 2rem);
 }
 
-.logo{
-  font: 700 1.31rem "Poppins", sans-serif; 
+/******************************** LOGO ********************************/
+
+.logo {
+  font: 700 1.31rem 'Poppins', sans-serif;
   color: var(--title-color);
 }
 
@@ -113,24 +114,89 @@ nav{
   color: var(--base-color);
 }
 
-main {
-  margin-top: var(--header-height);
+/******************************** NAVIGATION ********************************/
+
+nav {
+  height: var(--header-height);
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#home{
-  overflow: hidden;
+nav ul li {
+  text-align: center;
 }
 
-#home .container{
-  margin: 0;
-}
-
-#home .image{
+nav ul li a {
+  transition: color 0.3;
   position: relative;
 }
 
-#home .image::before{
-  content:'';
+nav ul li a:hover {
+  color: var(--base-color);
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background-color: var(--base-color);
+
+  position: absolute;
+  left: 0;
+  bottom: -1.5rem;
+
+  transition: width 0.2s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav .menu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/******************************** MOSTRAR MENU ********************************/
+
+nav.show .menu {
+  opacity: 1;
+  visibility: visible;
+  background-color: var(--body-color);
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+nav.show .menu {
+  display: grid;
+  place-content: center;
+}
+
+nav ul.grid {
+  gap: 4rem;
+}
+/******************************** HOME ********************************/
+
+#home {
+  overflow: hidden;
+}
+
+#home .container {
+  margin: 0;
+}
+
+#home .image {
+  position: relative;
+}
+
+#home .image::before {
+  content: '';
   height: 100%;
   width: 100%;
   background: var(--base-color-second);
@@ -140,17 +206,17 @@ main {
   z-index: 0;
 }
 
-#home .image img{
+#home .image img {
   position: relative;
-  right: 2.93rem
+  right: 2.93rem;
 }
 
 #home .image img,
-#home .image::before{
-  border-radius: .25rem;
+#home .image::before {
+  border-radius: 0.25rem;
 }
 
-#home .text{
+#home .text {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   text-align: center;
@@ -163,7 +229,5 @@ main {
 #home .text p {
   margin-bottom: 2rem;
 }
-
-
 
 /*====  HOME ============================ */
