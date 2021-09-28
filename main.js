@@ -18,10 +18,10 @@ for (const link of links) {
 }
 
 // mudar o header da pagina quando rolar (scroll)
-const header = document.querySelector('#header')
-const navHeight = header.offsetHeight
 
-window.addEventListener('scroll', function () {
+function changeHeaderWhenScroll() {
+  const header = document.querySelector('#header')
+  const navHeight = header.offsetHeight
   if (window.scrollY >= navHeight) {
     //scroll é maior que a altura do header
     header.classList.add('scroll')
@@ -29,7 +29,7 @@ window.addEventListener('scroll', function () {
     // menor que a altura do header
     header.classList.remove('scroll')
   }
-})
+}
 
 // TESTIMONIAL CAROUSEL SLIDER SWIPER
 const swiper = new Swiper('.swiper-container', {
@@ -56,6 +56,24 @@ scrollReveal.reveal(
 #services header, #services .card,
 #testimonials header, #testimonials .testimonials,
 #contact .text, #contact .links
+footer .brand, footer .social
 `,
   { interval: 100 }
 )
+
+// BACK TO TOP: BOTÃO VOLTAR PARA O TOPO
+function backToTop() {
+  const backToTopButton = document.querySelector('.back-to-top')
+
+  if (window.scrollY >= 560) {
+    backToTopButton.classList.add('show')
+  } else {
+    backToTopButton.classList.remove('show')
+  }
+}
+
+// WHEN SCROLL: QUANDO ROLAR A PAGINA EXECUTA AS FUNÇÕES
+window.addEventListener('scroll', function () {
+  changeHeaderWhenScroll()
+  backToTop()
+})
