@@ -64,12 +64,18 @@ body {
   background-color: var(--base-color);
   color: var(--text-color-light);
   height: 3.5rem;
-  display: inline-flex;
+  width: 14.75rem;
+  display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0.2rem;
   border-radius: 0.25rem;
   font: 500 1rem var(--body-font);
   transition: background 0.3s;
+}
+
+.button i {
+  margin-right: 0.625rem;
 }
 
 .button:hover {
@@ -427,6 +433,7 @@ nav.show div.icon-close {
 .swiper-slide {
   height: auto;
   padding: 4rem 1rem;
+  background: var(--body-color);
 }
 
 .swiper-pagination-bullet {
