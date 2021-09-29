@@ -46,7 +46,7 @@
 <p>Voce pode visualizar o layout do projeto através  <a hre="https://www.figma.com/file/NGZiePPGv97XZecJvLqx7C/Origin-Six-(Community)?node-id=28%3A3">deste link</a>. É necessário ter conta no <a href="https://figma.com">Figma</a> para acessá-lo.</p>
 
 <h3>📝 Licença</h3>
-<p>Esse projeto está sob a licença do MIT. Veja o arquivo <a href=".github/LICENSE.md">LICENSE</a> para mais detalhes.</p>
+<p>Esse projeto está sob a licença do MIT. Veja o arquivo <a href="LICENSE">LICENSE</a> para mais detalhes.</p>
 <br>
 
 <h3>by HeltonRios</h3>
